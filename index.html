@@ -1,0 +1,87 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TecnoSite Studio | Diseño Web Profesional</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+  <div class="container nav">
+
+    <div class="brand">
+      <img src="assets/logo.jpeg" alt="Logo TecnoSite Studio" class="logo-img">
+      <span class="logo-text">TecnoSite Studio</span>
+    </div>
+
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#contacto" class="btn">Cotizar</a>
+    </nav>
+
+  </div>
+</header>
+
+  <!-- HERO -->
+  <section id="inicio" class="hero">
+    <div class="container">
+      <h2>Diseño Web Profesional para tu Negocio</h2>
+      <p>Creamos tu página web a medida para PYMES y emprendedores</p>
+      <a href="#contacto" class="btn-primary">Más Información</a>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios" class="services container">
+    <h3>Nuestros Servicios</h3>
+    <div class="cards">
+      <div class="card">
+        <h4>Desarrollo Web</h4>
+        <p>Sitios modernos y funcionales.</p>
+      </div>
+      <div class="card">
+        <h4>Tiendas Online</h4>
+        <p>E-commerce a tu medida.</p>
+      </div>
+      <div class="card">
+        <h4>Estilos Personalizados</h4>
+        <p>Mejora tu visibilidad como Pymes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOSOTROS -->
+  <section id="nosotros" class="about">
+    <div class="container">
+      <h3>Sobre Nosotros</h3>
+      <p>Somos TecnoSite Studio, expertos en crear páginas web profesionales para PYMES y emprendedores. Tu éxito es nuestro objetivo.</p>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto" class="contact container">
+    <h3>Contáctanos</h3>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Tu nombre" required />
+      <input type="email" name="email" placeholder="Tu correo" required />
+      <textarea name="message" placeholder="Tu mensaje" required></textarea>
+      <button type="submit" class="btn-primary">Enviar Mensaje</button>
+    </form>
+    <p id="formStatus"></p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© 2026 TecnoSite Studio | Todos los derechos reservados</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  emailjs.init("PUBLIC_KEY");
+</script>
+</body>
+</html>
