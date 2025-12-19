@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     status.textContent = 'Enviando mensaje...';
 
     emailjs.send(
-      'SERVICE_ID',   // 🔁 CAMBIA ESTO
-      'TEMPLATE_ID',  // 🔁 CAMBIA ESTO
+      'service_rqt12xw', 
+      'template_lvpuztp',
       {
         from_name: form.name.value,
         reply_to: form.email.value,
