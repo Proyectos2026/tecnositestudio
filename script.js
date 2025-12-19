@@ -1,18 +1,36 @@
-// script.js
-document.getElementById("contactForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// Esperar a que el DOM cargue
+document.addEventListener('DOMContentLoaded', function () {
 
-  emailjs.sendForm(
-    "service_rqt12xw",
-    "template_kxyigl9",
-    this,
-    "PUBLIC_KEY"
-  ).then(() => {
-    document.getElementById("formStatus").innerText =
-      "Mensaje enviado correctamente ✅";
-    this.reset();
-  }).catch(() => {
-    document.getElementById("formStatus").innerText =
-      "Error al enviar el mensaje ❌";
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('formStatus');
+
+  if (!form) {
+    console.error('Formulario contactForm no encontrado');
+    return;
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // 🔥 Evita recarga
+
+    status.textContent = 'Enviando mensaje...';
+
+    emailjs.send(
+      'SERVICE_ID',   // 🔁 CAMBIA ESTO
+      'TEMPLATE_ID',  // 🔁 CAMBIA ESTO
+      {
+        from_name: form.name.value,
+        reply_to: form.email.value,
+        message: form.message.value
+      }
+    )
+    .then(function () {
+      status.textContent = 'Mensaje enviado correctamente ✅';
+      form.reset();
+    })
+    .catch(function (error) {
+      console.error('EmailJS Error:', error);
+      status.textContent = 'Error al enviar el mensaje ❌';
+    });
   });
+
 });
