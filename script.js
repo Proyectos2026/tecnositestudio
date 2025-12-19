@@ -1,4 +1,6 @@
+alert("JS CARGADO");
 // Esperar a que el DOM cargue
+
 document.addEventListener('DOMContentLoaded', function () {
 
   const form = document.getElementById('contactForm');
